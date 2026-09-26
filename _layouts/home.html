@@ -13,7 +13,7 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {%- assign minutes = post.content | number_of_words | divided_by: 200 | round -%}
+        {%- assign minutes = post.content | number_of_words | divided_by: 200.0 | round -%}
         {%- if minutes < 1 -%}{%- assign minutes = 1 -%}{%- endif -%}
         <li>
           <div class="post-list-meta">
