@@ -187,6 +187,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-list > li:hover .post-list-title .post-link { color: $brand-color; }
 
+.post-rt { color: $grey-color; font-variant-numeric: tabular-nums; }
+
+.post-excerpt {
+  color: $grey-color;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin: .45rem 0 0;
+
+  p { margin: 0 0 .5rem; }
+  p:last-child { margin-bottom: 0; }
+}
+
 .post-tags {
   list-style: none;
   margin: .65rem 0 0;

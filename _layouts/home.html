@@ -13,6 +13,8 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- assign minutes = post.content | number_of_words | divided_by: 200 | round -%}
+        {%- if minutes < 1 -%}{%- assign minutes = 1 -%}{%- endif -%}
         <li>
           <div class="post-list-meta">
             <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
@@ -20,11 +22,17 @@ layout: default
               <span class="post-list-sep" aria-hidden="true">•</span>
               <span class="post-cats">{{ post.categories | join: " · " }}</span>
             {%- endif -%}
+            <span class="post-list-sep" aria-hidden="true">•</span>
+            <span class="post-rt">{{ minutes }} min read</span>
           </div>
 
           <h3 class="post-list-title">
             <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
           </h3>
+
+          {%- if post.excerpt -%}
+            <div class="post-excerpt">{{ post.excerpt }}</div>
+          {%- endif -%}
 
           {%- if post.tags.size > 0 -%}
             <ul class="post-tags" aria-label="Tags">
