@@ -129,6 +129,87 @@ h1, h2, h3, h4, h5, h6 {
 .post-link:visited { color: $text-color; }
 .post-link:hover { color: $brand-color; text-decoration: none; }
 
+/* ---------- Home post list: refined date row + tag chips ---------- */
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: ($spacing-unit * 1.4);
+    padding-bottom: ($spacing-unit * 1.2);
+    border-bottom: 1px solid $grey-color-light;
+
+    &:last-child { border-bottom: 0; padding-bottom: 0; }
+  }
+}
+
+.post-list-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .5rem .6rem;
+  font-size: .95rem;
+  line-height: 1.2;
+  margin-bottom: .35rem;
+}
+
+.post-date {
+  color: $grey-color;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .01em;
+}
+
+.post-list-sep {
+  color: darken($grey-color-light, 6%);
+  line-height: 1;
+}
+
+.post-cats {
+  color: $grey-color;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: .01em;
+}
+
+.post-list-title {
+  margin: 0 0 .15rem;
+  line-height: 1.2;
+
+  .post-link {
+    color: $text-color;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    font-size: 1.5rem;
+    transition: color .15s ease;
+  }
+}
+
+.post-list > li:hover .post-list-title .post-link { color: $brand-color; }
+
+.post-tags {
+  list-style: none;
+  margin: .65rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .35rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .015em;
+  padding: .35rem .65rem;
+  border-radius: 999px;
+  color: $brand-color;
+  background: rgba(37, 99, 235, .07);
+  border: 1px solid rgba(37, 99, 235, .16);
+  white-space: nowrap;
+}
+
 /* ---------- Blockquote: modern, non-italic for readability ---------- */
 blockquote {
   color: $grey-color;
