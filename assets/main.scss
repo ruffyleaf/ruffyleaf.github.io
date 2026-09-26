@@ -1,0 +1,187 @@
+---
+# Customized minima theme for maximilian jackson
+# Overrides minima's SCSS variables (they use !default) BEFORE importing the
+# theme, then appends focused refinements for a clean, modern, readable layout.
+---
+
+// ============ Design tokens (override minima defaults) ============
+$base-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+$base-font-size:   18px;   // comfortable reading size (minima default 16px)
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.888;
+$base-line-height: 1.7;    // generous leading for long-form reading
+
+$spacing-unit: 32px;
+
+$text-color:       #1f2328;   // near-black, softer than pure #000
+$background-color: #ffffff;
+$brand-color:      #2563eb;   // single modern accent (blue)
+
+$grey-color:       #57606a;   // secondary text
+$grey-color-light: #e6e8eb;   // borders / dividers
+$grey-color-dark:  #24292f;
+
+$table-text-align: left;
+
+$content-width: 720px;   // narrower measure => better readability
+$on-palm:       600px;
+$on-laptop:     720px;
+
+// ============ Import the theme ============
+@import "minima";
+
+// ============ Refinements ============
+:root { color-scheme: light; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: $base-font-family;
+  background: $background-color;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: rgba(37, 99, 235, .16); }
+
+/* Accessible keyboard focus */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid $brand-color;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Keep anchors clear of the sticky header */
+[id], .post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+  scroll-margin-top: 84px;
+}
+
+/* ---------- Header: sticky, translucent, clean ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 62px;
+  background: rgba(255, 255, 255, .82);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-top: 0;
+  border-bottom: 1px solid $grey-color-light;
+}
+.site-title {
+  float: left;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  line-height: 62px;
+}
+.site-title, .site-title:visited { color: $text-color; }
+
+.site-nav { line-height: 62px; }
+.site-nav .page-link {
+  color: $grey-color;
+  font-weight: 500;
+  transition: color .15s ease;
+}
+.site-nav .page-link:hover { color: $text-color; text-decoration: none; }
+
+/* ---------- Content rhythm ---------- */
+.page-content { padding: ($spacing-unit * 1.5) 0 ($spacing-unit * 2); }
+
+.post-content { line-height: $base-line-height; }
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content blockquote { max-width: 68ch; }
+.post-content p { margin-bottom: $spacing-unit; }
+
+/* Headings: heavier + tighter, with breathing room above */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: $text-color;
+}
+.post-content h2 { margin-top: ($spacing-unit * 1.75); margin-bottom: ($spacing-unit * .5); }
+.post-content h3 { margin-top: ($spacing-unit * 1.25); margin-bottom: ($spacing-unit * .35); }
+.post-content h4 { margin-top: $spacing-unit; margin-bottom: ($spacing-unit * .3); }
+
+/* Underline in-content links (clarity + accessibility) */
+.post-content a {
+  color: $brand-color;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(37, 99, 235, .35);
+  transition: text-decoration-color .15s ease;
+}
+.post-content a:hover { text-decoration-color: $brand-color; }
+
+/* ---------- Post list (home) & headers ---------- */
+.post-header { margin-bottom: ($spacing-unit * 1.25); }
+.post-title  { font-size: 38px; letter-spacing: -0.03em; line-height: 1.12; }
+.post-meta   { color: $grey-color; letter-spacing: .01em; }
+
+.post-list > li { margin-bottom: ($spacing-unit * 1.3); }
+.post-link { font-weight: 600; color: $text-color; }
+.post-link:visited { color: $text-color; }
+.post-link:hover { color: $brand-color; text-decoration: none; }
+
+/* ---------- Blockquote: modern, non-italic for readability ---------- */
+blockquote {
+  color: $grey-color;
+  background: #f7f9fc;
+  border-left: 3px solid $brand-color;
+  border-radius: 0 6px 6px 0;
+  padding: ($spacing-unit * .5) ($spacing-unit * .85);
+  margin: $spacing-unit 0;
+  font-style: normal;
+  letter-spacing: 0;
+}
+blockquote > :last-child { margin-bottom: 0; }
+
+/* ---------- Code ---------- */
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 15px;
+  background-color: #f6f8fa;
+  border: 1px solid $grey-color-light;
+  border-radius: 6px;
+}
+code { padding: .15em .4em; }
+pre {
+  padding: 16px 18px;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+pre > code { border: 0; padding: 0; background: none; }
+.highlight, .highlight pre, pre.highlight { background-color: #f6f8fa !important; }
+
+/* ---------- Images & rules ---------- */
+.post-content img { border-radius: 8px; box-shadow: 0 1px 2px rgba(0, 0, 0, .06); }
+hr { border: 0; border-top: 1px solid $grey-color-light; margin: $spacing-unit 0; }
+
+/* ---------- Tables ---------- */
+table { border: 1px solid $grey-color-light; }
+table th { background: #f6f8fa; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #f7f8fa;
+  border-top: 1px solid $grey-color-light;
+  padding: ($spacing-unit * 1.25) 0;
+  margin-top: $spacing-unit;
+}
+.footer-heading { font-weight: 700; color: $text-color; }
+.footer-col-wrapper { color: $grey-color; }
+.social-media-list .username { color: $brand-color; }
+
+/* ---------- Small screens ---------- */
+@include media-query($on-palm) {
+  body { font-size: 17px; }
+  .post-title { font-size: 30px; }
+  .site-header { min-height: 56px; }
+  .site-title, .site-nav { line-height: 56px; }
+}
