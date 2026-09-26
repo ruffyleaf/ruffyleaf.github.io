@@ -22,7 +22,9 @@ title: Maximilian Jackson
 author: Maximilian Jackson
 email: maximilian.jackson@gmail.com
 description: >-
-  My personal blog
+  Field notes from Maximilian Jackson — Director, Data & AI — on turning
+  data into decisions: practical data & analytics, modern data systems and
+  machine learning, and the leadership side of building data teams that ship.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ruffyleaf.github.io" # the base hostname & protocol for your site
 github_username:  ruffyleaf
