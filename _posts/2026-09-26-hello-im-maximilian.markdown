@@ -24,6 +24,6 @@ I started this blog as a place to think out loud and document lessons from the f
 
 I don't have a rigid schedule. The plan is to write when I have something worth sharing and keep it useful.
 
-If you'd like to reach me, the best way is email at [maximilian.jackson@gmail.com](mailto:maximilian.jackson@gmail.com). You can also find my code on [GitHub](https://github.com/ruffyleaf) or connect with me on [LinkedIn](https://www.linkedin.com/in/mjyzc/).
+If you'd like to reach me or see more of my work, find my code on [GitHub](https://github.com/ruffyleaf) or connect with me on [LinkedIn](https://www.linkedin.com/in/mjyzc/).
 
 Thanks for reading — more soon.

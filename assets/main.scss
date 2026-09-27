@@ -272,14 +272,6 @@ table th { background: #f6f8fa; }
 .footer-col-wrapper { color: $grey-color; }
 .social-media-list .username { color: $brand-color; }
 
-/* ---------- Resume page: omit the site email from the global footer ---------- */
-/* The footer is rendered on every page; hide only the e-mail line on /resume/ */
-/* (the printed CV also drops it) so the résumé carries no email/phone.       */
-.layout-resume .site-footer a.u-email { display: none; }
-@media print {
-  .layout-resume .site-footer a.u-email { display: none; }
-}
-
 /* ---------- Small screens ---------- */
 @include media-query($on-palm) {
   body { font-size: 17px; }
