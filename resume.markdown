@@ -9,10 +9,6 @@ permalink: /resume/
 <p class="resume-kicker">Curriculum Vitae</p>
 
 <p class="resume-meta">
-  <a href="mailto:maximilian.jackson@gmail.com">maximilian.jackson@gmail.com</a>
-  <span aria-hidden="true">·</span>
-  <a href="tel:+6598633461">+65 9863 3461</a>
-  <span aria-hidden="true">·</span>
   Singapore
   <span aria-hidden="true">·</span>
   <a href="https://www.linkedin.com/in/mjyzc/" rel="me">linkedin.com/in/mjyzc</a>
@@ -122,6 +118,5 @@ permalink: /resume/
   .resume .resume-h{ margin:1.1rem 0 .4rem; }
   .resume .r-entry{ margin-bottom:.6rem; break-inside:avoid; }
   .resume a{ color:inherit; text-decoration:none; }
-  a[href^="tel:"]::after{ content:""; }
 }
 </style>
